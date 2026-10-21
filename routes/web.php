@@ -45,9 +45,9 @@ Route::get('/transacciones', [TransaccionController::class, 'index'])->name('tra
 Route::get('/eventos-transaccion', [EventoTransaccionController::class, 'index'])->name('eventos-transaccion.index');
 
 Route::prefix('comercios')->name('comercios.')->group(function () {
-    Route::get('/', [ComercioController::class, 'index'])->name('index');
+    Route::get('/', [ComercioController::class, 'index'])->name('comercios.index');
 
-    Route::get('/comercio/{comercio}', [ComercioController::class, 'show']);
+    Route::get('/{comercio}', [ComercioController::class, 'show'])->name('comercios.show');
 });
 
 Route::prefix('transacciones')->name('transacciones.')->group(function () {
